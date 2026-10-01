@@ -5,164 +5,93 @@
 }
 
 body {
-  font-family: "Courier New", monospace;
-  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
-  color: #d4d4d4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-.game-container {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.main-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  font-family: Arial, sans-serif;
+  background: #f6f8fb;
+  color: #1f2937;
+  line-height: 1.6;
 }
 
 h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.hero {
   text-align: center;
-  color: #f48771;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  padding: 72px 20px 56px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
 }
 
-.subtitle {
-  text-align: center;
-  color: #858585;
-  font-size: 0.9em;
-  margin-bottom: 20px;
+.hero-subtitle {
+  margin: 12px 0 24px;
+  opacity: 0.95;
 }
 
-canvas {
-  border: 3px solid #f48771;
-  background: #252526;
-  display: block;
-  box-shadow: 0 0 20px rgba(244, 135, 113, 0.3);
-}
-
-.side-panel {
-  background: #252526;
-  border: 2px solid #3e3e42;
-  padding: 20px;
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background: #ffffff;
+  color: #1d4ed8;
+  padding: 10px 18px;
   border-radius: 8px;
-  min-width: 200px;
+  font-weight: 600;
 }
 
-.info-section {
-  margin-bottom: 25px;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 20px;
 }
 
-.info-section h3 {
-  color: #4ec9b0;
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  border-bottom: 1px solid #3e3e42;
-  padding-bottom: 5px;
+section {
+  margin-bottom: 28px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
-.score {
-  font-size: 2em;
-  color: #ce9178;
-  font-weight: bold;
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
 }
 
-.pattern-preview {
-  margin-top: 10px;
+.skills li {
+  background: #e0e7ff;
+  color: #1e40af;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.95rem;
 }
 
-#patternCanvas {
-  border: 2px solid #3e3e42;
-  background: #1e1e1e;
-  display: block;
-  margin: 10px auto;
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
 }
 
-.pattern-name {
-  text-align: center;
-  color: #f48771;
-  font-weight: bold;
-  margin-top: 8px;
-  font-size: 0.9em;
-}
-
-.controls {
-  line-height: 1.8;
-  color: #858585;
-}
-
-.controls strong {
-  color: #d4d4d4;
-}
-
-.game-over {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #1e1e1e;
-  border: 3px solid #f48771;
-  padding: 40px;
+.card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 10px;
+  padding: 14px;
+}
+
+.footer {
   text-align: center;
-  display: none;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-}
-
-.game-over.show {
-  display: block;
-}
-
-.game-over h2 {
-  color: #f48771;
-  font-size: 2.5em;
-  margin-bottom: 15px;
-}
-
-.game-over p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.game-over button {
-  background: #f48771;
-  color: #1e1e1e;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  font-family: "Courier New", monospace;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.game-over button:hover {
-  background: #ff9d88;
-}
-
-.status {
-  color: #4ec9b0;
-  font-size: 0.9em;
-  margin-top: 10px;
+  padding: 24px 20px 36px;
+  color: #4b5563;
 }
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.8em;
-  }
-
-  .game-container {
-    gap: 15px;
+    font-size: 1.9rem;
   }
 }
