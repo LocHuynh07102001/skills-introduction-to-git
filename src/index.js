@@ -38,6 +38,9 @@ let currentPiece = null;
 let currentX = 0;
 let currentY = 0;
 let score = 0;
+let highScore = 0;
+let level = 1;
+let patternsCleared = 0;
 let gameOver = false;
 let isPaused = false;
 let dropCounter = 0;
@@ -56,6 +59,11 @@ function init() {
   board = Array(ROWS)
     .fill(null)
     .map(() => Array(COLS).fill(0));
+
+  // Load high score from localStorage
+  highScore = Number.parseInt(localStorage.getItem("stackOverflownHighScore"), 10) || 0;
+  document.getElementById("high-score").textContent = highScore;
+  document.getElementById("level").textContent = level;
 
   // Set initial target pattern
   setNewTargetPattern();
@@ -269,6 +277,12 @@ function checkPatternMatch() {
       if (matchesPattern(startRow, startCol)) {
         clearPattern(startRow, startCol);
         score += 100;
+        patternsCleared++;
+        if (patternsCleared % 5 === 0) {
+          level++;
+          dropInterval = Math.max(200, 1000 - (level - 1) * 100);
+          document.getElementById("level").textContent = level;
+        }
         updateScore();
         setNewTargetPattern();
         return;
@@ -307,6 +321,12 @@ function clearPattern(startRow, startCol) {
 // Update score display
 function updateScore() {
   document.getElementById("score").textContent = score;
+
+  if (score > highScore) {
+    highScore = score;
+    document.getElementById("high-score").textContent = highScore;
+    localStorage.setItem("stackOverflownHighScore", highScore);
+  }
 }
 
 // Handle keyboard input
